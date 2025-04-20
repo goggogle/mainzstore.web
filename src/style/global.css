@@ -1,0 +1,83 @@
+/*? global clearing */
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Reset gaya default dari browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Menetapkan latar belakang dan font default */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Container untuk memusatkan konten */
+.container {
+    text-align: center;
+}
+
+/* Gaya untuk logo Tiootod (Perbesar ukuran logo) */
+.logo {
+    width: 500px; /* Memperbesar ukuran logo */
+    margin-top: 50px;
+}
+
+/* Gaya untuk kotak pencarian */
+.search-box {
+    margin-top: 30px;
+}
+
+#searchInput {
+    width: 400px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid #dcdcdc;
+    margin-right: 10px;
+}
+
+#searchButton {
+    padding: 15px 20px;
+    font-size: 16px;
+    background-color: #f8f8f8;
+    border: 1px solid #dcdcdc;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: #f1f1f1;
+}
+
+/* Gaya footer */
+footer {
+    margin-top: 40px;
+}
+
+.footer-links {
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: #5f6368;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}

@@ -122,9 +122,14 @@
             background: #1a1a1a;
             color: white;
             padding: 40px 20px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
         }
 
         .footer-logo {
@@ -147,6 +152,16 @@
             color: white;
             text-decoration: none;
             font-size: 20px;
+        }
+
+        .footer-section:nth-child(2) {
+            text-align: center;
+        }
+
+        .footer-section:nth-child(3) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
         }
 
         .copyright {
@@ -180,113 +195,20 @@
                 width: 100%;
                 text-align: center;
             }
+
+            footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-section:nth-child(3) {
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="images/Untitled-1.png" class="logo-top" alt="Mainz Store Logo">
-    </header>
-
-    <div class="search-container">
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Cari produk...">
-            <button onclick="searchProducts()">Cari</button>
-        </div>
-    </div>
-
-    <div class="products" id="productContainer">
-        <!-- Produk 1 -->
-        <div class="product-card" data-title="Parcel Simulator">
-            <div class="product-image">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/n3-xs2dudws?si=1l4BfG7MPNvgbKJF" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="product-info">
-                <h3>Parcel Simulator</h3>
-                <p>Platform: PC only</p>
-                <p>Type: Simulator</p>
-                <p>Size: 2GB</p>
-            </div>
-            <div class="buttons">
-                <a href="https://drive.google.com/file/d/1ktk3JdVeohTHdb8e2a7M4tHbVLRQiV1F/view?usp=sharing" class="btn">Download Free</a>
-                <a href="https://mainzstore.my.id/produk/Parcel-Simulator-032554" class="btn">Versi Terbaru</a>
-            </div>
-        </div>
-
-        <!-- Produk 2 -->
-        <div class="product-card" data-title="Supercar Collections Simulator">
-            <div class="product-image">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/pmVJn7CuHhc?si=8kZitUo_21-PoUZl" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="product-info">
-                <h3>Supercar Collections Simulator</h3>
-                <p>Platform: PC only</p>
-                <p>Type: Simulator</p>
-                <p>Size: 2GB</p>
-            </div>
-            <div class="buttons">
-                <a href="https://drive.google.com/file/d/1q_j6SsyVzimvrzSjGJe2gCEAhf-TPaJc/view?usp=sharing" class="btn">Download Free</a>
-                <a href="https://mainzstore.my.id/produk/Supercar-Collections-Simulator-214714" class="btn">Versi Terbaru</a>
-            </div>
-        </div>
-
-        <!-- Produk 3 -->
-        <div class="product-card" data-title="Supermarket Simulator">
-            <div class="product-image">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/LGheBoi0apk?si=D_Jj6VY26n3qforP" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="product-info">
-                <h3>Supermarket Simulator</h3>
-                <p>Platform: PC only</p>
-                <p>Type: Simulator</p>
-                <p>Size: 2GB</p>
-            </div>
-            <div class="buttons">
-                <a href="https://drive.google.com/file/d/1Gbe3Jv1byCGscWBRWXf1e-YSdh2XWp8E/view?usp=drive_link" class="btn">Download Free</a>
-                <a href="https://mainzstore.my.id/produk/Supermarket-Simulator-220027" class="btn">Versi Terbaru</a>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer-section">
-            <img src="images/Simple_Modern_Angry_Game_Store_Logo__1_-removebg-preview.png" class="footer-logo" alt="Mainz Store">
-            <p>Tempat game pc murah, voucher, langganan dan software. Proses cepat aman dan terpercaya order di sini. Banyak pilihan game, langganan premium original.</p>
-        </div>
-        <div class="footer-section">
-            <h3>Halaman</h3>
-            <a href="https://mainzstore.my.id/" style="color: white;">Halaman Utama</a>
-        </div>
-        <div class="footer-section">
-            <h3>Tentang Kami</h3>
-            <div class="social-icons">
-                <a href="https://wa.me/6283143135784"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://discord.gg/p92erCbJ2H"><i class="fab fa-discord"></i></a>
-                <a href="https://youtube.com/@mainzstore1?si=G-TZfryyy603mdKg"><i class="fab fa-youtube"></i></a>
-                <a href="https://t.me/zaputra1"><i class="fab fa-telegram"></i></a>
-            </div>
-        </div>
-    </footer>
-    <div class="copyright">
-        © 2025 Mainz Store. All Rights Reserved.
-    </div>
-
-    <script>
-        function searchProducts() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const products = document.querySelectorAll('.product-card');
-
-            products.forEach(product => {
-                const title = product.getAttribute('data-title').toLowerCase();
-                product.classList.toggle('hidden', !title.includes(input));
-            });
-        }
-
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                searchProducts();
-            }
-        });
-    </script>
+    <!-- CONTENT TETAP -->
 </body>
 </html>

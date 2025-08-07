@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
-  <link rel="icon" href="images/Pink___Purple_Futuristic_Game_Logo-removebg-preview.png" type="image/png">
+<html lang="id">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mainz Store</title>
+    <link rel="icon" href="images/Pink___Purple_Futuristic_Game_Logo-removebg-preview.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
@@ -16,9 +18,9 @@
             background-color: #f0f0f0;
         }
 
-        .header {
-            padding: 20px;
+        header {
             background: white;
+            padding: 20px;
             position: relative;
         }
 
@@ -60,7 +62,7 @@
 
         .products {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
             padding: 20px;
         }
@@ -97,26 +99,23 @@
 
         .buttons {
             display: flex;
+            flex-wrap: wrap;
             gap: 10px;
             margin-top: 15px;
         }
 
         .btn {
-            padding: 8px 15px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
             border: none;
             border-radius: 5px;
-            cursor: pointer;
-            transition: opacity 0.3s;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        .btn-preview {
-            background: #4CAF50;
-            color: white;
-        }
-
-        .btn-download {
-            background: #2196F3;
-            color: white;
+        .btn:hover {
+            background-color: #0056b3;
         }
 
         footer {
@@ -124,11 +123,8 @@
             color: white;
             padding: 40px 20px 20px;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-
-        .footer-section {
-            padding: 0 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
         }
 
         .footer-logo {
@@ -145,7 +141,6 @@
             display: flex;
             gap: 15px;
             margin-top: 10px;
-            justify-content: flex-end;
         }
 
         .social-icons a {
@@ -161,21 +156,31 @@
             color: #999;
         }
 
-        .btn {
-            padding: 10px 20px;            /* Jarak dalam tombol */
-            background-color: #007bff;     /* Warna latar biru */
-            color: white;                  /* Warna teks putih */
-            border: none;                  /* Tanpa garis tepi */
-            border-radius: 5px;            /* Sudut melengkung */
-            text-decoration: none;         /* Hilangkan garis bawah (kalau <a>) */
-            display: inline-block;         /* Agar bisa sejajar */
-            margin-right: 10px;            /* Jarak kanan */
-          }
+        @media (max-width: 600px) {
+            .search-bar {
+                flex-direction: column;
+            }
 
-          .btn:hover {
-            background-color: #0056b3;     /* Warna saat mouse diarahkan */
-          }
+            .search-bar input, .search-bar button {
+                width: 100%;
+                border-radius: 0;
+            }
 
+            .logo-top {
+                position: relative;
+                left: 0;
+                margin-bottom: 10px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -191,74 +196,74 @@
     </div>
 
     <div class="products" id="productContainer">
+        <!-- Produk 1 -->
         <div class="product-card" data-title="Parcel Simulator">
             <div class="product-image">
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/n3-xs2dudws?si=1l4BfG7MPNvgbKJF" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="product-info">
                 <h3>Parcel Simulator</h3>
-                <p>Platform: Pc only</p>
-                <p>Type: simulator</p>
+                <p>Platform: PC only</p>
+                <p>Type: Simulator</p>
                 <p>Size: 2GB</p>
             </div>
             <div class="buttons">
                 <a href="https://drive.google.com/file/d/1ktk3JdVeohTHdb8e2a7M4tHbVLRQiV1F/view?usp=sharing" class="btn">Download Free</a>
                 <a href="https://mainzstore.my.id/produk/Parcel-Simulator-032554" class="btn">Versi Terbaru</a>
-
             </div>
         </div>
+
+        <!-- Produk 2 -->
         <div class="product-card" data-title="Supercar Collections Simulator">
             <div class="product-image">
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/pmVJn7CuHhc?si=8kZitUo_21-PoUZl" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="product-info">
                 <h3>Supercar Collections Simulator</h3>
-                <p>Platform: Pc only</p>
-                <p>Type: simulator</p>
+                <p>Platform: PC only</p>
+                <p>Type: Simulator</p>
                 <p>Size: 2GB</p>
             </div>
             <div class="buttons">
                 <a href="https://drive.google.com/file/d/1q_j6SsyVzimvrzSjGJe2gCEAhf-TPaJc/view?usp=sharing" class="btn">Download Free</a>
                 <a href="https://mainzstore.my.id/produk/Supercar-Collections-Simulator-214714" class="btn">Versi Terbaru</a>
-
             </div>
         </div>
 
+        <!-- Produk 3 -->
         <div class="product-card" data-title="Supermarket Simulator">
             <div class="product-image">
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/LGheBoi0apk?si=D_Jj6VY26n3qforP" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="product-info">
                 <h3>Supermarket Simulator</h3>
-                <p>Platform: Pc only</p>
+                <p>Platform: PC only</p>
                 <p>Type: Simulator</p>
                 <p>Size: 2GB</p>
             </div>
             <div class="buttons">
-              <a href="https://drive.google.com/file/d/1Gbe3Jv1byCGscWBRWXf1e-YSdh2XWp8E/view?usp=drive_link" class="btn">Download Free</a>
-              <a href="https://mainzstore.my.id/produk/Supermarket-Simulator-220027" class="btn">Versi Terbaru</a>
-
-
+                <a href="https://drive.google.com/file/d/1Gbe3Jv1byCGscWBRWXf1e-YSdh2XWp8E/view?usp=drive_link" class="btn">Download Free</a>
+                <a href="https://mainzstore.my.id/produk/Supermarket-Simulator-220027" class="btn">Versi Terbaru</a>
             </div>
         </div>
     </div>
 
     <footer>
-        <div class="footer-section" style="text-align: left;">
+        <div class="footer-section">
             <img src="images/Simple_Modern_Angry_Game_Store_Logo__1_-removebg-preview.png" class="footer-logo" alt="Mainz Store">
-            <p>Tempat TOP UP Game Dan Voucer Termurah.</p>
+            <p>Tempat game pc murah, voucher, langganan dan software. Proses cepat aman dan terpercaya order di sini. Banyak pilihan game, langganan premium original.</p>
         </div>
-        <div class="footer-section" style="text-align: center;">
+        <div class="footer-section">
             <h3>Halaman</h3>
             <a href="https://mainzstore.my.id/" style="color: white;">Halaman Utama</a>
         </div>
-        <div class="footer-section" style="text-align: right;">
+        <div class="footer-section">
             <h3>Tentang Kami</h3>
             <div class="social-icons">
-                <a href="https://wa.me/6283143135784" style="color: white;"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://discord.gg/p92erCbJ2H" style="color: #ccc; text-decoration: none;"><i class="fab fa-discord"></i></a>
-                <a href="https://youtube.com/@mainzstore1?si=G-TZfryyy603mdKg" style="color: white;"><i class="fab fa-youtube"></i></a>
-                <a href="https://t.me/zaputra1" style="color: white;"><i class="fab fa-telegram"></i></a>
+                <a href="https://wa.me/6283143135784"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://discord.gg/p92erCbJ2H"><i class="fab fa-discord"></i></a>
+                <a href="https://youtube.com/@mainzstore1?si=G-TZfryyy603mdKg"><i class="fab fa-youtube"></i></a>
+                <a href="https://t.me/zaputra1"><i class="fab fa-telegram"></i></a>
             </div>
         </div>
     </footer>
@@ -270,14 +275,13 @@
         function searchProducts() {
             const input = document.getElementById('searchInput').value.toLowerCase();
             const products = document.querySelectorAll('.product-card');
-            
+
             products.forEach(product => {
                 const title = product.getAttribute('data-title').toLowerCase();
                 product.classList.toggle('hidden', !title.includes(input));
             });
         }
 
-        // Add enter key support
         document.getElementById('searchInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 searchProducts();
@@ -286,4 +290,3 @@
     </script>
 </body>
 </html>
-

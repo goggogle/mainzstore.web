@@ -1,245 +1,272 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
+  <link rel="icon" href="images/Pink___Purple_Futuristic_Game_Logo-removebg-preview.png" type="image/png">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mainz Store</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-<link rel="icon" href="images/logo.png" type="image/png">
-<style>
-body {
-  background: linear-gradient(to bottom, #001f2f, #003344);
-  color: white;
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-header {
-  background: #00bcd4;
-  padding: 20px;
-  text-align: center;
-  font-size: 28px;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 1px 1px 2px black;
-}
-.about-container {
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: auto;
-  background-color: #002b3a;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #000a;
-}
-.about-container h2 {
-  color: #00ffff;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #00ffff;
-  padding-bottom: 5px;
-}
-.about-container p {
-  line-height: 1.9;
-  margin-bottom: 20px;
-}
-.channel-links, .platform-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 30px;
-}
-.channel-links a, .platform-buttons a {
-  flex: 1 1 180px;
-  background: #0066cc;
-  color: white;
-  text-decoration: none;
-  padding: 12px;
-  border-radius: 6px;
-  text-align: center;
-  font-weight: bold;
-  transition: 0.3s;
-}
-.channel-links a:hover, .platform-buttons a:hover {
-  background: #004c99;
-}
-img.logo {
-  max-width: 180px;
-  display: block;
-  margin: 20px auto;
-  border-radius: 50%;
-  border: 3px solid cyan;
-}
-.game-description {
-  background: #003850;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 20px;
-  box-shadow: 0 0 10px #0008;
-}
-.game-description img {
-  width: 200px;
-  border-radius: 10px;
-  flex-shrink: 0;
-}
-.game-description h3 {
-  margin: 0;
-  color: #00e6e6;
-}
-.game-description p {
-  flex: 1;
-}
-footer {
-  background: #002b3a;
-  padding: 25px;
-  text-align: center;
-  font-size: 15px;
-  color: #ccc;
-  border-top: 1px solid #004c66;
-}
-a {
-  color: cyan;
-}
-</style>
+    <title>Mainz Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+        }
+
+        .header {
+            padding: 20px;
+            background: white;
+            position: relative;
+        }
+
+        .logo-top {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            height: 50px;
+        }
+
+        .search-container {
+            padding: 20px;
+            background: white;
+        }
+
+        .search-bar {
+            display: flex;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            outline: none;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background: #2196F3;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card.hidden {
+            display: none;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: #eee;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .product-info h3 {
+            color: #2196F3;
+            margin-bottom: 8px;
+        }
+
+        .product-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .btn-preview {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .btn-download {
+            background: #2196F3;
+            color: white;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 20px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .footer-section {
+            padding: 0 20px;
+        }
+
+        .footer-logo {
+            max-height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 15px;
+            color: #2196F3;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            justify-content: flex-end;
+        }
+
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            color: #999;
+        }
+
+        .btn {
+            padding: 10px 20px;            /* Jarak dalam tombol */
+            background-color: #007bff;     /* Warna latar biru */
+            color: white;                  /* Warna teks putih */
+            border: none;                  /* Tanpa garis tepi */
+            border-radius: 5px;            /* Sudut melengkung */
+            text-decoration: none;         /* Hilangkan garis bawah (kalau <a>) */
+            display: inline-block;         /* Agar bisa sejajar */
+            margin-right: 10px;            /* Jarak kanan */
+          }
+
+          .btn:hover {
+            background-color: #0056b3;     /* Warna saat mouse diarahkan */
+          }
+
+    </style>
 </head>
-<header style="position: relative;">
-  <div style="text-align: left; padding-left: 20px; padding-bottom: 10px;">
-  <img src="images/RDAW.png" alt="Mainz Store Logo" style="max-height: 70px;">
-</div>
-  <div onclick="toggleLanguageMenu()" style="position: absolute; top: 10px; right: 10px; font-size: 18px; color: white; background: rgba(0,0,0,0.5); padding: 6px 12px; border-radius: 5px; cursor: pointer; font-weight: bold; font-family: 'Segoe UI', sans-serif;">
-    <span id="langLabel"><i class="fas fa-globe"></i> <img src="https://flagcdn.com/w40/id.png" style="height: 18px; vertical-align: middle;"> Indo</span>
-  </div>
-  
-<div id="langMenu" style="display: none; position: absolute; top: 50px; right: 10px; background: #003850; padding: 10px; border-radius: 5px; z-index: 9999;">
-  <select onchange="changeLanguage(this.value)" style="padding: 5px; font-weight: bold;">
-    <option value="id">Indonesia</option>
-    <option value="en">Ingris</option>
-  </select>
-</div>
-</header>
-<div class="about-container">
-  
+<body>
+    <header>
+        <img src="images/Untitled-1.png" class="logo-top" alt="Mainz Store Logo">
+    </header>
 
-  <h2>🌟 Tentang Kami</h2>
-  <p>
-    <a href="https://mainzstore.my.id/" target="_blank">Mainz Store</a> adalah pusat digital terpercaya yang menyediakan ribuan game PC dan mobile, software premium, dan layanan digital lainnya dengan harga sangat terjangkau. Kami menawarkan pilihan produk original dan non-original sesuai kebutuhan dan anggaran Anda.
-  </p>
-
-  <h2>📣 Channel Komunitas</h2>
-  <p>Temukan semua update dan promo eksklusif di channel resmi kami. Akses langsung ke <a href="https://mainzstore.my.id/" target="_blank">Mainz Store</a> online!</p>
-  <div class="channel-links">
-    <a href="https://mainzstore.my.id/" target="_blank"><i class="fas fa-shopping-cart"></i> Store Web</a>
-    <a href="https://t.me/zaputra1" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
-    <a href="https://discord.gg/p92erCbJ2H" target="_blank"><i class="fab fa-discord"></i> Discord</a>
-    <a href="https://wa.me/6283123456789" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-  </div>
-
-  <h2>🎮 Game Terpopuler</h2>
-  <p>Kami menjual berbagai game populer dari platform besar seperti Steam & Epic Games, namun dengan harga lebih murah dan pilihan original atau non-original (crack/repack).</p>
-  <div class="platform-buttons">
-    <a href="https://store.steampowered.com/" target="_blank"><i class="fab fa-steam"></i> Steam Game</a>
-    <a href="https://www.epicgames.com/store/" target="_blank"><i class="fas fa-gamepad"></i> Epic Game</a>
-    <a href="https://mainzstore.my.id/#download" target="_blank"><i class="fas fa-download"></i> Download Sekarang</a>
-  </div>
-
-  <h2>🔥 Produk Unggulan</h2>
-  <div class="game-description">
-  <div style="font-size: 60px; color: cyan;"><i class="fas fa-laptop"></i></div>
-  <div>
-      <h3>Game PC (Steam / Repack)</h3>
-      <p>Kami menyediakan berbagai judul game populer seperti GTA V, Red Dead Redemption 2, FIFA, dan lainnya dalam bentuk original dan repack (non-original) dengan harga yang sangat terjangkau.</p>
+    <div class="search-container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Cari produk...">
+            <button onclick="searchProducts()">Cari</button>
+        </div>
     </div>
-  </div>
-  <div class="game-description">
-  <div style="font-size: 60px; color: cyan;"><i class="fas fa-mobile-alt"></i></div>
-  <div>
-      <h3>Akun Premium</h3>
-      <p>Langganan murah untuk layanan seperti Netflix, Spotify, Canva, Grammarly, ChatGPT Plus, dan lainnya. Tersedia bulanan atau lifetime.</p>
+
+    <div class="products" id="productContainer">
+        <div class="product-card" data-title="Supercar Collections Simulator">
+            <div class="product-image">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/pmVJn7CuHhc?si=8kZitUo_21-PoUZl" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="product-info">
+                <h3>Supercar Collections Simulator</h3>
+                <p>Platform: Pc only</p>
+                <p>Type: simulator</p>
+                <p>Size: 2GB</p>
+            </div>
+            <div class="buttons">
+                <a href="https://drive.google.com/file/d/1q_j6SsyVzimvrzSjGJe2gCEAhf-TPaJc/view?usp=sharing" class="btn">Download Free</a>
+                <a href="https://mainzstore.my.id/produk/Supercar-Collections-Simulator-214714" class="btn">Versi Terbaru</a>
+
+            </div>
+        </div>
+
+        <div class="product-card" data-title="Supermarket Simulator">
+            <div class="product-image">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/LGheBoi0apk?si=D_Jj6VY26n3qforP" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="product-info">
+                <h3>Supermarket Simulator</h3>
+                <p>Platform: Pc only</p>
+                <p>Type: Simulator</p>
+                <p>Size: 2GB</p>
+            </div>
+            <div class="buttons">
+              <a href="https://drive.google.com/file/d/1Gbe3Jv1byCGscWBRWXf1e-YSdh2XWp8E/view?usp=drive_link" class="btn">Download Free</a>
+              <a href="https://mainzstore.my.id/produk/Supermarket-Simulator-220027" class="btn">Versi Terbaru</a>
+
+
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="game-description">
-  <div style="font-size: 60px; color: cyan;"><i class="fas fa-gamepad"></i></div>
-  <div>
-      <h3>APK Modifikasi</h3>
-      <p>Unduh aplikasi dan game Android mod premium seperti Mobile Legends mod, Minecraft PE, WhatsApp GB, dan lainnya. Bebas iklan dan fitur terbuka.</p>
+
+    <footer>
+        <div class="footer-section" style="text-align: left;">
+            <img src="images/Simple_Modern_Angry_Game_Store_Logo__1_-removebg-preview.png" class="footer-logo" alt="Mainz Store">
+            <p>Tempat game pc murah, voucher, langganan dan software. Proses cepat aman dan terpercaya order di sini. Banyak pilihan game, langganan premium original.</p>
+        </div>
+        <div class="footer-section" style="text-align: center;">
+            <h3>Halaman</h3>
+            <a href="https://mainzstore.my.id/" style="color: white;">Halaman Utama</a>
+        </div>
+        <div class="footer-section" style="text-align: right;">
+            <h3>Tentang Kami</h3>
+            <div class="social-icons">
+                <a href="https://wa.me/6283143135784" style="color: white;"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://discord.gg/p92erCbJ2H" style="color: #ccc; text-decoration: none;"><i class="fab fa-discord"></i></a>
+                <a href="https://youtube.com/@mainzstore1?si=G-TZfryyy603mdKg" style="color: white;"><i class="fab fa-youtube"></i></a>
+                <a href="https://t.me/zaputra1" style="color: white;"><i class="fab fa-telegram"></i></a>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright">
+        © 2025 Mainz Store. All Rights Reserved.
     </div>
-  </div>
 
-  <h2>📬 Butuh Bantuan?</h2>
-<p id="helpText">
-    Tim Mainz Store siap membantu Anda melalui WhatsApp, Telegram, dan Discord setiap hari. Silakan hubungi kami jika butuh rekomendasi produk atau panduan instalasi.
-  </p>
-</div>
+    <script>
+        function searchProducts() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const products = document.querySelectorAll('.product-card');
+            
+            products.forEach(product => {
+                const title = product.getAttribute('data-title').toLowerCase();
+                product.classList.toggle('hidden', !title.includes(input));
+            });
+        }
 
-
-
-<div id="bantuanText" style="background-color: #001f2f; padding: 12px; color: white; text-align: center; font-weight: bold; font-size: 16px; border-top: 1px solid #004c66;">
-  ❓ Butuh Bantuan? Kirimkan pertanyaan atau masukan Anda melalui form di bawah!
-</div>
-
-</div>
-<footer style="margin-top: 0; background: #002b3a; padding: 20px; text-align: center; font-size: 15px; color: #ccc; border-top: 1px solid #004c66;">
-  &copy; 2025 <a href="https://mainzstore.my.id/" target="_blank" style="color: cyan;">Mainz Store</a>. Semua Hak Dilindungi.
-</footer>
-
-<!-- Form Masukan Pengunjung -->
-<div style="background-color: #002b3a; padding: 20px; color: white; text-align: center;">
-  <h3 id="feedbackTitle" style="color: #00ffff;"><i class="fas fa-comment-dots"></i> Kirim Masukan untuk Kami</h3>
-  <form onsubmit="showThanks(event)" style="max-width: 500px; margin: auto;">
-    <input type="text" name="nama" id="inputNama" placeholder="Nama Anda" required style="width: 90%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none;">
-    <textarea name="pesan" id="inputPesan" placeholder="Tulis masukan atau pertanyaan Anda di sini..." required rows="5" style="width: 90%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none;"></textarea>
-    <button type="submit" id="submitBtn" style="padding: 10px 20px; background-color: #00bcd4; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Kirim</button>
-  </form>
-  <div id="feedbackResult" style="margin-top: 15px; color: #00ffcc; font-weight: bold;"></div>
-</div>
-<script>
-function changeLanguage(lang) {
-  document.getElementById('bantuanText').textContent = lang === 'en'
-    ? '❓ Need Help? Send your question or feedback through the form below!'
-    : '❓ Butuh Bantuan? Kirimkan pertanyaan atau masukan Anda melalui form di bawah!';
-  document.getElementById('inputNama').placeholder = lang === 'en' ? 'Your Name' : 'Nama Anda';
-  document.getElementById('inputPesan').placeholder = lang === 'en' ? 'Write your message or question here...' : 'Tulis masukan atau pertanyaan Anda di sini...';
-  document.getElementById('submitBtn').textContent = lang === 'en' ? 'Submit' : 'Kirim';
-  document.getElementById('feedbackTitle').innerHTML = lang === 'en'
-    ? '<i class="fas fa-comment-dots"></i> Send Us Your Feedback'
-    : '<i class="fas fa-comment-dots"></i> Kirim Masukan untuk Kami';
-  document.getElementById('langLabel').innerHTML = lang === 'id'
-    ? '<i class="fas fa-globe"></i> <img src="https://flagcdn.com/w40/id.png" style="height: 18px; vertical-align: middle;"> Indo'
-    : '<i class="fas fa-globe"></i> <img src="https://flagcdn.com/w40/gb.png" style="height: 18px; vertical-align: middle;"> Ingris';
-  const content = document.querySelector('.about-container');
-  if (lang === 'en') {
-    content.querySelector('h2:nth-of-type(1)').textContent = '🌟 About Us';
-    content.querySelectorAll('p')[0].innerHTML = '<a href="https://mainzstore.my.id/" target="_blank">Mainz Store</a> is a trusted digital hub that provides thousands of PC and mobile games, premium software, and other digital services at very affordable prices. We offer original and non-original product options according to your needs and budget.';
-
-    content.querySelector('h2:nth-of-type(2)').textContent = '📣 Community Channels';
-    content.querySelectorAll('p')[1].innerHTML = 'Find all updates and exclusive promos on our official channels. Direct access to <a href="https://mainzstore.my.id/" target="_blank">Mainz Store</a> online!';
-
-    content.querySelector('h2:nth-of-type(3)').textContent = '🎮 Popular Games';
-    content.querySelectorAll('p')[2].textContent = 'We sell various popular games from major platforms like Steam & Epic Games, but at cheaper prices and with original or non-original (crack/repack) options.';
-
-    content.querySelector('h2:nth-of-type(4)').textContent = '🔥 Featured Products';
-    content.querySelectorAll('.game-description h3')[0].textContent = 'PC Games (Steam / Repack)';
-    content.querySelectorAll('.game-description p')[0].textContent = 'We provide various popular game titles such as GTA V, Red Dead Redemption 2, FIFA, and more in original and repack (non-original) form at very affordable prices.';
-    content.querySelectorAll('.game-description h3')[1].textContent = 'Premium Accounts';
-    content.querySelectorAll('.game-description p')[1].textContent = 'Affordable subscriptions for services like Netflix, Spotify, Canva, Grammarly, ChatGPT Plus, and more. Available monthly or lifetime.';
-    content.querySelectorAll('.game-description h3')[2].textContent = 'Modified APKs';
-    content.querySelectorAll('.game-description p')[2].textContent = 'Download premium mod Android apps and games like Mobile Legends mod, Minecraft PE, WhatsApp GB, and more. Ad-free and unlocked features.';
-
-    content.querySelector('h2:nth-of-type(5)').textContent = '📬 Need Help?';
-    document.getElementById('helpText').textContent = 'The Mainz Store team is ready to help you via WhatsApp, Telegram, and Discord every day. Feel free to contact us for product recommendations or installation guidance.';
-  } else {
-    location.reload(); // reload untuk kembali ke bahasa Indonesia
-  }
-}
-function toggleLanguageMenu() {
-  const menu = document.getElementById('langMenu');
-  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-}
-function showThanks(e) {
-  e.preventDefault();
-  document.getElementById('feedbackResult').innerText = lang === 'en' ? 'Thank you for your feedback. Message sent!' : 'Terima kasih atas masukannya. Masukan terkirim!';
-  e.target.reset();
-}
-</script>
+        // Add enter key support
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchProducts();
+            }
+        });
+    </script>
+</body>
 </html>
